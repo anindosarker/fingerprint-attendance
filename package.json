@@ -14,6 +14,7 @@
     "@types/react": "~18.0.27",
     "expo": "~48.0.6",
     "expo-local-authentication": "~13.2.1",
+    "expo-network": "~5.2.1",
     "expo-status-bar": "~1.4.4",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
