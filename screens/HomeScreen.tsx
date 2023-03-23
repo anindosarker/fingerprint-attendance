@@ -2,6 +2,8 @@ import { View, Text, Button } from "react-native";
 import React, { useEffect, useState } from "react";
 import * as LocalAuthentication from "expo-local-authentication";
 import * as Network from "expo-network";
+import Net from "../components/Net";
+import LocationComp from '../components/LocationComp';
 
 export default function HomeScreen() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,6 +19,8 @@ export default function HomeScreen() {
   async function getNetInfo() {
     const networkInfo = await Network.getIpAddressAsync();
     setIp(networkInfo);
+    const networkInfo2 = await Network.getNetworkStateAsync();
+    console.log("networkInfo2", networkInfo2);
   }
 
   useEffect(() => {
@@ -49,6 +53,8 @@ export default function HomeScreen() {
         </View>
       )}
       <Text>Home Screen ip: {ip}</Text>
+      <Net />
+      <LocationComp />
     </View>
   );
 }
