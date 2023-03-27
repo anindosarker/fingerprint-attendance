@@ -9,14 +9,14 @@ export default function Net() {
     console.log("Connection type", state.type);
     console.log("Is connected?", state.isConnected);
     console.log("ssid", state.details?.ssid);
-    setSsid(state.details?.bssid);
+    setSsid(state.details);
     console.log("bssid", ssid);
-
   });
   return (
     <View>
-      <Text>wifi ssid = {ssid}</Text>
-      <Text>{ssid}</Text>
+      <Text>
+        Wifi info {ssid.ssid} ({ssid.bssid})
+      </Text>
     </View>
   );
 }
